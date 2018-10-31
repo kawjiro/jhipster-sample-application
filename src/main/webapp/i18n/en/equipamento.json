@@ -1,0 +1,28 @@
+
+{
+    "primeiraAplicacaoApp": {
+        "equipamento" : {
+            "home": {
+                "title": "Equipamentos",
+                "createLabel": "Create a new Equipamento",
+                "createOrEditLabel": "Create or edit a Equipamento",
+                "search": "Search for Equipamento"
+            },
+            "created": "A new Equipamento is created with identifier {{ param }}",
+            "updated": "A Equipamento is updated with identifier {{ param }}",
+            "deleted": "A Equipamento is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Equipamento {{ id }}?"
+            },
+            "detail": {
+                "title": "Equipamento"
+            },
+            "descricao": "Descricao",
+            "numPatrimonio": "Num Patrimonio",
+            "status": "Status",
+            "modeloEquipamento": "Modelo Equipamento",
+            "manutencao": "Manutencao",
+            "reserva": "Reserva"
+        }
+    }
+}

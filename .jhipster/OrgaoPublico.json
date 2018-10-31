@@ -1,0 +1,26 @@
+{
+    "name": "OrgaoPublico",
+    "fields": [
+        {
+            "fieldName": "nomeOrgaoPublico",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "servidor",
+            "otherEntityName": "servidor",
+            "otherEntityRelationshipName": "orgaoPublico"
+        }
+    ],
+    "changelogDate": "20181031225445",
+    "entityTableName": "orgao_publico",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

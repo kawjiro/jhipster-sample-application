@@ -1,0 +1,25 @@
+
+{
+    "primeiraAplicacaoApp": {
+        "modeloEquipamento" : {
+            "home": {
+                "title": "Modelo Equipamentos",
+                "createLabel": "Criar novo Modelo Equipamento",
+                "createOrEditLabel": "Criar ou editar Modelo Equipamento",
+                "search": "Pesquisar por Modelo Equipamento"
+            },
+            "created": "Um novo Modelo Equipamento foi criado com o identificador {{ param }}",
+            "updated": "Um Modelo Equipamento foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Modelo Equipamento foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Modelo Equipamento {{ id }}?"
+            },
+            "detail": {
+                "title": "Modelo Equipamento"
+            },
+            "nomeModelo": "Nome Modelo",
+            "numPatrimonio": "Num Patrimonio",
+            "equipamento": "Equipamento"
+        }
+    }
+}

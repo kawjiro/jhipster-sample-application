@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="uso">
+            <h2><span jhiTranslate="primeiraAplicacaoApp.uso.detail.title">Uso</span> {{uso.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="primeiraAplicacaoApp.uso.dataInicio">Data Inicio</span></dt>
+                <dd>
+                    <span>{{uso.dataInicio}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.uso.dataFim">Data Fim</span></dt>
+                <dd>
+                    <span>{{uso.dataFim}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.uso.tipoEquipamento">Tipo Equipamento</span></dt>
+                <dd>
+                    <span>{{uso.tipoEquipamento}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/uso', uso.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

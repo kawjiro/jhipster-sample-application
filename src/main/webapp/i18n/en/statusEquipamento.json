@@ -1,0 +1,9 @@
+{
+    "primeiraAplicacaoApp": {
+        "StatusEquipamento" : {
+            "null": "",
+            "Funcionando": "Funcionando",
+            "Defeito": "Defeito"
+        }
+    }
+}

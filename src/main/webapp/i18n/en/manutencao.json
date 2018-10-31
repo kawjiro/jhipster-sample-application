@@ -1,0 +1,24 @@
+
+{
+    "primeiraAplicacaoApp": {
+        "manutencao" : {
+            "home": {
+                "title": "Manutencaos",
+                "createLabel": "Create a new Manutencao",
+                "createOrEditLabel": "Create or edit a Manutencao",
+                "search": "Search for Manutencao"
+            },
+            "created": "A new Manutencao is created with identifier {{ param }}",
+            "updated": "A Manutencao is updated with identifier {{ param }}",
+            "deleted": "A Manutencao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Manutencao {{ id }}?"
+            },
+            "detail": {
+                "title": "Manutencao"
+            },
+            "estadoEquipamento": "Estado Equipamento",
+            "equipamento": "Equipamento"
+        }
+    }
+}

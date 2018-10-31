@@ -1,0 +1,24 @@
+
+{
+    "primeiraAplicacaoApp": {
+        "orgaoPublico" : {
+            "home": {
+                "title": "Orgao Publicos",
+                "createLabel": "Crear nuevo Orgao Publico",
+                "createOrEditLabel": "Crear o editar Orgao Publico",
+                "search": "Search for Orgao Publico"
+            },
+            "created": "Un nuevo Orgao Publico ha sido creado con el identificador {{ param }}",
+            "updated": "Un Orgao Publico ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Orgao Publico ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Orgao Publico {{ id }}?"
+            },
+            "detail": {
+                "title": "Orgao Publico"
+            },
+            "nomeOrgaoPublico": "Nome Orgao Publico",
+            "servidor": "Servidor"
+        }
+    }
+}

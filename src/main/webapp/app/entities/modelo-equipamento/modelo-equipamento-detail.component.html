@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="modeloEquipamento">
+            <h2><span jhiTranslate="primeiraAplicacaoApp.modeloEquipamento.detail.title">Modelo Equipamento</span> {{modeloEquipamento.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="primeiraAplicacaoApp.modeloEquipamento.nomeModelo">Nome Modelo</span></dt>
+                <dd>
+                    <span>{{modeloEquipamento.nomeModelo}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.modeloEquipamento.numPatrimonio">Num Patrimonio</span></dt>
+                <dd>
+                    <span>{{modeloEquipamento.numPatrimonio}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.modeloEquipamento.equipamento">Equipamento</span></dt>
+                <dd>
+                    <div *ngIf="modeloEquipamento.equipamento">
+                        <a [routerLink]="['/equipamento', modeloEquipamento.equipamento?.id, 'view']">{{modeloEquipamento.equipamento?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/modelo-equipamento', modeloEquipamento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

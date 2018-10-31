@@ -1,0 +1,35 @@
+{
+    "name": "Uso",
+    "fields": [
+        {
+            "fieldName": "dataInicio",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dataFim",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "tipoEquipamento",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "servidor",
+            "otherEntityName": "servidor",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "uso"
+        }
+    ],
+    "changelogDate": "20181031225447",
+    "entityTableName": "uso",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
