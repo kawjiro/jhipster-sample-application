@@ -1,0 +1,59 @@
+
+
+entity OrgaoPublico {
+	nomeOrgaoPublico String
+}
+
+entity Servidor {
+	nome String
+    numMatricula String
+    cargo String
+}
+
+entity Uso {
+	dataInicio Date,
+	dataFim Date,
+	tipoEquipamento String
+}
+
+entity Equipamento {
+	descricao String
+    numPatrimonio Integer
+    status StatusEquipamento
+}
+
+entity Justificativa {
+	descricaoAtividade String
+}
+
+entity Reserva {
+	dataHoraReserva Date
+    dataHoraRetirdaPrev Date
+    dataHoraDevolucaoPrev Date
+}
+
+entity ModeloEquipamento {
+	nomeModelo String,
+	numPatrimonio Integer
+}
+
+enum StatusEquipamento {
+	Funcionando, Defeito
+}
+
+entity Manutencao {
+	estadoEquioamento String
+}
+
+relationship OneToOne {
+	Servidor to Uso
+    Servidor to Justificativa
+}
+
+relationship OneToMany {
+	OrgaoPublico to Servidor
+    Servidor to Reserva
+    Reserva to Equipamento
+    Equipamento to ModeloEquipamento
+    StatusEquipamento to Manutencao
+}
