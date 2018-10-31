@@ -1,0 +1,24 @@
+
+{
+    "primeiraAplicacaoApp": {
+        "justificativa" : {
+            "home": {
+                "title": "Justificativas",
+                "createLabel": "Crear nuevo Justificativa",
+                "createOrEditLabel": "Crear o editar Justificativa",
+                "search": "Search for Justificativa"
+            },
+            "created": "Un nuevo Justificativa ha sido creado con el identificador {{ param }}",
+            "updated": "Un Justificativa ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Justificativa ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Justificativa {{ id }}?"
+            },
+            "detail": {
+                "title": "Justificativa"
+            },
+            "descricaoAtividade": "Descricao Atividade",
+            "servidor": "Servidor"
+        }
+    }
+}

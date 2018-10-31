@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="servidor">
+            <h2><span jhiTranslate="primeiraAplicacaoApp.servidor.detail.title">Servidor</span> {{servidor.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="primeiraAplicacaoApp.servidor.nome">Nome</span></dt>
+                <dd>
+                    <span>{{servidor.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.servidor.numMatricula">Num Matricula</span></dt>
+                <dd>
+                    <span>{{servidor.numMatricula}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.servidor.cargo">Cargo</span></dt>
+                <dd>
+                    <span>{{servidor.cargo}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.servidor.uso">Uso</span></dt>
+                <dd>
+                    <div *ngIf="servidor.uso">
+                        <a [routerLink]="['/uso', servidor.uso?.id, 'view']">{{servidor.uso?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.servidor.justificativa">Justificativa</span></dt>
+                <dd>
+                    <div *ngIf="servidor.justificativa">
+                        <a [routerLink]="['/justificativa', servidor.justificativa?.id, 'view']">{{servidor.justificativa?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.servidor.orgaoPublico">Orgao Publico</span></dt>
+                <dd>
+                    <div *ngIf="servidor.orgaoPublico">
+                        <a [routerLink]="['/orgao-publico', servidor.orgaoPublico?.id, 'view']">{{servidor.orgaoPublico?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/servidor', servidor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{
+    "name": "ModeloEquipamento",
+    "fields": [
+        {
+            "fieldName": "nomeModelo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numPatrimonio",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "equipamento",
+            "otherEntityName": "equipamento",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031225451",
+    "entityTableName": "modelo_equipamento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

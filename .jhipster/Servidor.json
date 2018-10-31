@@ -1,0 +1,56 @@
+{
+    "name": "Servidor",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numMatricula",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cargo",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "uso",
+            "otherEntityName": "uso",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "servidor"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "justificativa",
+            "otherEntityName": "justificativa",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "servidor"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reserva",
+            "otherEntityName": "reserva",
+            "otherEntityRelationshipName": "servidor"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "orgaoPublico",
+            "otherEntityName": "orgaoPublico",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031225446",
+    "entityTableName": "servidor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

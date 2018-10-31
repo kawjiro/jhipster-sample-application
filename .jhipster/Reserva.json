@@ -1,0 +1,40 @@
+{
+    "name": "Reserva",
+    "fields": [
+        {
+            "fieldName": "dataHoraReserva",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dataHoraRetirdaPrev",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dataHoraDevolucaoPrev",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "equipamento",
+            "otherEntityName": "equipamento",
+            "otherEntityRelationshipName": "reserva"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "servidor",
+            "otherEntityName": "servidor",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031225450",
+    "entityTableName": "reserva",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

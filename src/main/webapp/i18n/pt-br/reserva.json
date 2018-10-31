@@ -1,0 +1,27 @@
+
+{
+    "primeiraAplicacaoApp": {
+        "reserva" : {
+            "home": {
+                "title": "Reservas",
+                "createLabel": "Criar novo Reserva",
+                "createOrEditLabel": "Criar ou editar Reserva",
+                "search": "Pesquisar por Reserva"
+            },
+            "created": "Um novo Reserva foi criado com o identificador {{ param }}",
+            "updated": "Um Reserva foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Reserva foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Reserva {{ id }}?"
+            },
+            "detail": {
+                "title": "Reserva"
+            },
+            "dataHoraReserva": "Data Hora Reserva",
+            "dataHoraRetirdaPrev": "Data Hora Retirda Prev",
+            "dataHoraDevolucaoPrev": "Data Hora Devolucao Prev",
+            "equipamento": "Equipamento",
+            "servidor": "Servidor"
+        }
+    }
+}

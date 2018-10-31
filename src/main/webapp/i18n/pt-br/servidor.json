@@ -1,0 +1,29 @@
+
+{
+    "primeiraAplicacaoApp": {
+        "servidor" : {
+            "home": {
+                "title": "Servidors",
+                "createLabel": "Criar novo Servidor",
+                "createOrEditLabel": "Criar ou editar Servidor",
+                "search": "Pesquisar por Servidor"
+            },
+            "created": "Um novo Servidor foi criado com o identificador {{ param }}",
+            "updated": "Um Servidor foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Servidor foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Servidor {{ id }}?"
+            },
+            "detail": {
+                "title": "Servidor"
+            },
+            "nome": "Nome",
+            "numMatricula": "Num Matricula",
+            "cargo": "Cargo",
+            "uso": "Uso",
+            "justificativa": "Justificativa",
+            "reserva": "Reserva",
+            "orgaoPublico": "Orgao Publico"
+        }
+    }
+}

@@ -7,6 +7,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entidades",
+                "orgaoPublico": "Orgao Publico",
+                "servidor": "Servidor",
+                "uso": "Uso",
+                "equipamento": "Equipamento",
+                "justificativa": "Justificativa",
+                "reserva": "Reserva",
+                "modeloEquipamento": "Modelo Equipamento",
+                "manutencao": "Manutencao",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

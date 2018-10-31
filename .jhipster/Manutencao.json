@@ -1,0 +1,26 @@
+{
+    "name": "Manutencao",
+    "fields": [
+        {
+            "fieldName": "estadoEquipamento",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "equipamento",
+            "otherEntityName": "equipamento",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031225452",
+    "entityTableName": "manutencao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

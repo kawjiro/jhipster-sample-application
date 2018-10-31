@@ -41,6 +41,19 @@ public class CacheConfiguration {
             cm.createCache(com.primeiraaplicacao.app.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.primeiraaplicacao.app.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.primeiraaplicacao.app.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.OrgaoPublico.class.getName(), jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.OrgaoPublico.class.getName() + ".servidors", jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Servidor.class.getName(), jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Servidor.class.getName() + ".reservas", jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Uso.class.getName(), jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Equipamento.class.getName(), jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Equipamento.class.getName() + ".modeloEquipamentos", jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Equipamento.class.getName() + ".manutencaos", jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Justificativa.class.getName(), jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Reserva.class.getName(), jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Reserva.class.getName() + ".equipamentos", jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.ModeloEquipamento.class.getName(), jcacheConfiguration);
+            cm.createCache(com.primeiraaplicacao.app.domain.Manutencao.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

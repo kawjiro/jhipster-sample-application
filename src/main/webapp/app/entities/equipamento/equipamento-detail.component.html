@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="equipamento">
+            <h2><span jhiTranslate="primeiraAplicacaoApp.equipamento.detail.title">Equipamento</span> {{equipamento.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="primeiraAplicacaoApp.equipamento.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{equipamento.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.equipamento.numPatrimonio">Num Patrimonio</span></dt>
+                <dd>
+                    <span>{{equipamento.numPatrimonio}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.equipamento.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'primeiraAplicacaoApp.StatusEquipamento.' + equipamento.status}}">{{equipamento.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="primeiraAplicacaoApp.equipamento.reserva">Reserva</span></dt>
+                <dd>
+                    <div *ngIf="equipamento.reserva">
+                        <a [routerLink]="['/reserva', equipamento.reserva?.id, 'view']">{{equipamento.reserva?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/equipamento', equipamento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

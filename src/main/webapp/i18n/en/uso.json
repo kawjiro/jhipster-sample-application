@@ -1,0 +1,26 @@
+
+{
+    "primeiraAplicacaoApp": {
+        "uso" : {
+            "home": {
+                "title": "Usos",
+                "createLabel": "Create a new Uso",
+                "createOrEditLabel": "Create or edit a Uso",
+                "search": "Search for Uso"
+            },
+            "created": "A new Uso is created with identifier {{ param }}",
+            "updated": "A Uso is updated with identifier {{ param }}",
+            "deleted": "A Uso is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Uso {{ id }}?"
+            },
+            "detail": {
+                "title": "Uso"
+            },
+            "dataInicio": "Data Inicio",
+            "dataFim": "Data Fim",
+            "tipoEquipamento": "Tipo Equipamento",
+            "servidor": "Servidor"
+        }
+    }
+}

@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="primeiraAplicacaoApp.modeloEquipamento.home.title">Modelo Equipamentos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-modelo-equipamento" [routerLink]="['/modelo-equipamento/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="primeiraAplicacaoApp.modeloEquipamento.home.createLabel">
+            Create new Modelo Equipamento
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'primeiraAplicacaoApp.modeloEquipamento.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="modeloEquipamentos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="primeiraAplicacaoApp.modeloEquipamento.nomeModelo">Nome Modelo</span></th>
+            <th><span jhiTranslate="primeiraAplicacaoApp.modeloEquipamento.numPatrimonio">Num Patrimonio</span></th>
+            <th><span jhiTranslate="primeiraAplicacaoApp.modeloEquipamento.equipamento">Equipamento</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let modeloEquipamento of modeloEquipamentos ;trackBy: trackId">
+                <td><a [routerLink]="['/modelo-equipamento', modeloEquipamento.id, 'view' ]">{{modeloEquipamento.id}}</a></td>
+                <td>{{modeloEquipamento.nomeModelo}}</td>
+                <td>{{modeloEquipamento.numPatrimonio}}</td>
+                <td>
+                    <div *ngIf="modeloEquipamento.equipamento">
+                        <a [routerLink]="['../equipamento', modeloEquipamento.equipamento?.id, 'view' ]" >{{modeloEquipamento.equipamento?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/modelo-equipamento', modeloEquipamento.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/modelo-equipamento', modeloEquipamento.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'modelo-equipamento/'+ modeloEquipamento.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

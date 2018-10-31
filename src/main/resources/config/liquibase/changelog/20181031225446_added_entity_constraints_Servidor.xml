@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Servidor.
+    -->
+    <changeSet id="20181031225446-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="uso_id"
+                                 baseTableName="servidor"
+                                 constraintName="fk_servidor_uso_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uso"/>
+
+        <addForeignKeyConstraint baseColumnNames="justificativa_id"
+                                 baseTableName="servidor"
+                                 constraintName="fk_servidor_justificativa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="justificativa"/>
+
+        <addForeignKeyConstraint baseColumnNames="orgao_publico_id"
+                                 baseTableName="servidor"
+                                 constraintName="fk_servidor_orgao_publico_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="orgao_publico"/>
+
+    </changeSet>
+</databaseChangeLog>

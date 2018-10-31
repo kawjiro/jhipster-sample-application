@@ -1,0 +1,47 @@
+{
+    "name": "Equipamento",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numPatrimonio",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "StatusEquipamento",
+            "fieldValues": "Funcionando,Defeito"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "modeloEquipamento",
+            "otherEntityName": "modeloEquipamento",
+            "otherEntityRelationshipName": "equipamento"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "manutencao",
+            "otherEntityName": "manutencao",
+            "otherEntityRelationshipName": "equipamento"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "reserva",
+            "otherEntityName": "reserva",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031225448",
+    "entityTableName": "equipamento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
