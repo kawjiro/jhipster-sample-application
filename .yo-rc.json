@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "PrimeiraAplicacao",
+    "packageName": "com.primeiraaplicacao.app",
+    "packageFolder": "com/primeiraaplicacao/app",
+    "serverPort": 8080,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "enableSwaggerCodegen": "true",
+    "messageBroker": "kafka",
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "pt-br",
+    "languages": [
+      "en",
+      "es",
+      "pt-br"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.5.0",
+    "jwtSecretKey": "Y2VjZmIyYjZlZTViNmY0ODIzOTNiNmRhMTIwYmU1NjExMWNjZjVmZmZlYmUxOTAxYTA3MGFiNjUzNDVjOTcyMGNjMjAzMzU3Mjc4NzY4YjY2ZTExZDk2ZjQ2MTFiNTExMzA2N2U2YmRjMWI0MjVmOWM3YzBlNDUzNWZmZTg5NTU="
+  },
+  "git-provider": "GitHub",
+  "git-company": "kawjiro",
+  "repository-name": "jhipster-sample-application"
+}
