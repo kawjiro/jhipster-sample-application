@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { Servidor } from 'app/shared/model/servidor.model';
 import { ServidorService } from './servidor.service';
 import { ServidorComponent } from './servidor.component';
@@ -16,10 +16,13 @@ import { IServidor } from 'app/shared/model/servidor.model';
 export class ServidorResolve implements Resolve<IServidor> {
     constructor(private service: ServidorService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Servidor> {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).pipe(map((servidor: HttpResponse<Servidor>) => servidor.body));
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<Servidor>) => response.ok),
+                map((servidor: HttpResponse<Servidor>) => servidor.body)
+            );
         }
         return of(new Servidor());
     }
