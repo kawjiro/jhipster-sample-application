@@ -264,7 +264,7 @@ public class OrgaoPublicoResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(orgaoPublico.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nomeOrgaoPublico").value(hasItem(DEFAULT_NOME_ORGAO_PUBLICO.toString())));
+            .andExpect(jsonPath("$.[*].nomeOrgaoPublico").value(hasItem(DEFAULT_NOME_ORGAO_PUBLICO)));
     }
 
     @Test

@@ -1,6 +1,6 @@
 {
     "primeiraAplicacaoApp": {
-        "StatusEquipamento" : {
+        "StatusEquipamento": {
             "null": "",
             "Funcionando": "Funcionando",
             "Defeito": "Defeito"

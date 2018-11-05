@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { Equipamento } from 'app/shared/model/equipamento.model';
 import { EquipamentoService } from './equipamento.service';
 import { EquipamentoComponent } from './equipamento.component';
@@ -16,10 +16,13 @@ import { IEquipamento } from 'app/shared/model/equipamento.model';
 export class EquipamentoResolve implements Resolve<IEquipamento> {
     constructor(private service: EquipamentoService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Equipamento> {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).pipe(map((equipamento: HttpResponse<Equipamento>) => equipamento.body));
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<Equipamento>) => response.ok),
+                map((equipamento: HttpResponse<Equipamento>) => equipamento.body)
+            );
         }
         return of(new Equipamento());
     }

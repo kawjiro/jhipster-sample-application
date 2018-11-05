@@ -1,7 +1,6 @@
-
 {
     "primeiraAplicacaoApp": {
-        "servidor" : {
+        "servidor": {
             "home": {
                 "title": "Servidors",
                 "createLabel": "Criar novo Servidor",

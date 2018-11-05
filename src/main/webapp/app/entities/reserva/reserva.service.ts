@@ -57,7 +57,7 @@ export class ReservaService {
             .pipe(map((res: EntityArrayResponseType) => this.convertDateArrayFromServer(res)));
     }
 
-    private convertDateFromClient(reserva: IReserva): IReserva {
+    protected convertDateFromClient(reserva: IReserva): IReserva {
         const copy: IReserva = Object.assign({}, reserva, {
             dataHoraReserva:
                 reserva.dataHoraReserva != null && reserva.dataHoraReserva.isValid() ? reserva.dataHoraReserva.format(DATE_FORMAT) : null,
@@ -73,19 +73,23 @@ export class ReservaService {
         return copy;
     }
 
-    private convertDateFromServer(res: EntityResponseType): EntityResponseType {
-        res.body.dataHoraReserva = res.body.dataHoraReserva != null ? moment(res.body.dataHoraReserva) : null;
-        res.body.dataHoraRetirdaPrev = res.body.dataHoraRetirdaPrev != null ? moment(res.body.dataHoraRetirdaPrev) : null;
-        res.body.dataHoraDevolucaoPrev = res.body.dataHoraDevolucaoPrev != null ? moment(res.body.dataHoraDevolucaoPrev) : null;
+    protected convertDateFromServer(res: EntityResponseType): EntityResponseType {
+        if (res.body) {
+            res.body.dataHoraReserva = res.body.dataHoraReserva != null ? moment(res.body.dataHoraReserva) : null;
+            res.body.dataHoraRetirdaPrev = res.body.dataHoraRetirdaPrev != null ? moment(res.body.dataHoraRetirdaPrev) : null;
+            res.body.dataHoraDevolucaoPrev = res.body.dataHoraDevolucaoPrev != null ? moment(res.body.dataHoraDevolucaoPrev) : null;
+        }
         return res;
     }
 
-    private convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
-        res.body.forEach((reserva: IReserva) => {
-            reserva.dataHoraReserva = reserva.dataHoraReserva != null ? moment(reserva.dataHoraReserva) : null;
-            reserva.dataHoraRetirdaPrev = reserva.dataHoraRetirdaPrev != null ? moment(reserva.dataHoraRetirdaPrev) : null;
-            reserva.dataHoraDevolucaoPrev = reserva.dataHoraDevolucaoPrev != null ? moment(reserva.dataHoraDevolucaoPrev) : null;
-        });
+    protected convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
+        if (res.body) {
+            res.body.forEach((reserva: IReserva) => {
+                reserva.dataHoraReserva = reserva.dataHoraReserva != null ? moment(reserva.dataHoraReserva) : null;
+                reserva.dataHoraRetirdaPrev = reserva.dataHoraRetirdaPrev != null ? moment(reserva.dataHoraRetirdaPrev) : null;
+                reserva.dataHoraDevolucaoPrev = reserva.dataHoraDevolucaoPrev != null ? moment(reserva.dataHoraDevolucaoPrev) : null;
+            });
+        }
         return res;
     }
 }

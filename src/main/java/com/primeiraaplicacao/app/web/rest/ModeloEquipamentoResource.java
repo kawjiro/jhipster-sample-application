@@ -33,9 +33,9 @@ public class ModeloEquipamentoResource {
 
     private static final String ENTITY_NAME = "modeloEquipamento";
 
-    private ModeloEquipamentoRepository modeloEquipamentoRepository;
+    private final ModeloEquipamentoRepository modeloEquipamentoRepository;
 
-    private ModeloEquipamentoSearchRepository modeloEquipamentoSearchRepository;
+    private final ModeloEquipamentoSearchRepository modeloEquipamentoSearchRepository;
 
     public ModeloEquipamentoResource(ModeloEquipamentoRepository modeloEquipamentoRepository, ModeloEquipamentoSearchRepository modeloEquipamentoSearchRepository) {
         this.modeloEquipamentoRepository = modeloEquipamentoRepository;

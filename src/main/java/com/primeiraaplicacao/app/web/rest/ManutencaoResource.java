@@ -33,9 +33,9 @@ public class ManutencaoResource {
 
     private static final String ENTITY_NAME = "manutencao";
 
-    private ManutencaoRepository manutencaoRepository;
+    private final ManutencaoRepository manutencaoRepository;
 
-    private ManutencaoSearchRepository manutencaoSearchRepository;
+    private final ManutencaoSearchRepository manutencaoSearchRepository;
 
     public ManutencaoResource(ManutencaoRepository manutencaoRepository, ManutencaoSearchRepository manutencaoSearchRepository) {
         this.manutencaoRepository = manutencaoRepository;
