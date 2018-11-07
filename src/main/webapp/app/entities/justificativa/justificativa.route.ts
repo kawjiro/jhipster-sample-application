@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { Justificativa } from 'app/shared/model/justificativa.model';
 import { JustificativaService } from './justificativa.service';
 import { JustificativaComponent } from './justificativa.component';
@@ -16,10 +16,13 @@ import { IJustificativa } from 'app/shared/model/justificativa.model';
 export class JustificativaResolve implements Resolve<IJustificativa> {
     constructor(private service: JustificativaService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Justificativa> {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).pipe(map((justificativa: HttpResponse<Justificativa>) => justificativa.body));
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<Justificativa>) => response.ok),
+                map((justificativa: HttpResponse<Justificativa>) => justificativa.body)
+            );
         }
         return of(new Justificativa());
     }

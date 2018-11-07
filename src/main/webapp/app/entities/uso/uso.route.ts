@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { Uso } from 'app/shared/model/uso.model';
 import { UsoService } from './uso.service';
 import { UsoComponent } from './uso.component';
@@ -16,10 +16,13 @@ import { IUso } from 'app/shared/model/uso.model';
 export class UsoResolve implements Resolve<IUso> {
     constructor(private service: UsoService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Uso> {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).pipe(map((uso: HttpResponse<Uso>) => uso.body));
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<Uso>) => response.ok),
+                map((uso: HttpResponse<Uso>) => uso.body)
+            );
         }
         return of(new Uso());
     }

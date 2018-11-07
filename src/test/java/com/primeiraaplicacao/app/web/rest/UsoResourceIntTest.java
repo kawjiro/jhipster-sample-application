@@ -286,7 +286,7 @@ public class UsoResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(uso.getId().intValue())))
             .andExpect(jsonPath("$.[*].dataInicio").value(hasItem(DEFAULT_DATA_INICIO.toString())))
             .andExpect(jsonPath("$.[*].dataFim").value(hasItem(DEFAULT_DATA_FIM.toString())))
-            .andExpect(jsonPath("$.[*].tipoEquipamento").value(hasItem(DEFAULT_TIPO_EQUIPAMENTO.toString())));
+            .andExpect(jsonPath("$.[*].tipoEquipamento").value(hasItem(DEFAULT_TIPO_EQUIPAMENTO)));
     }
 
     @Test

@@ -33,9 +33,9 @@ public class JustificativaResource {
 
     private static final String ENTITY_NAME = "justificativa";
 
-    private JustificativaRepository justificativaRepository;
+    private final JustificativaRepository justificativaRepository;
 
-    private JustificativaSearchRepository justificativaSearchRepository;
+    private final JustificativaSearchRepository justificativaSearchRepository;
 
     public JustificativaResource(JustificativaRepository justificativaRepository, JustificativaSearchRepository justificativaSearchRepository) {
         this.justificativaRepository = justificativaRepository;
