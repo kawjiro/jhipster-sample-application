@@ -282,9 +282,9 @@ public class ServidorResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(servidor.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nome").value(hasItem(DEFAULT_NOME.toString())))
-            .andExpect(jsonPath("$.[*].numMatricula").value(hasItem(DEFAULT_NUM_MATRICULA.toString())))
-            .andExpect(jsonPath("$.[*].cargo").value(hasItem(DEFAULT_CARGO.toString())));
+            .andExpect(jsonPath("$.[*].nome").value(hasItem(DEFAULT_NOME)))
+            .andExpect(jsonPath("$.[*].numMatricula").value(hasItem(DEFAULT_NUM_MATRICULA)))
+            .andExpect(jsonPath("$.[*].cargo").value(hasItem(DEFAULT_CARGO)));
     }
 
     @Test

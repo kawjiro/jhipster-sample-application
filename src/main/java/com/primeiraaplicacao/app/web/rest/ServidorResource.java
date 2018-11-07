@@ -33,9 +33,9 @@ public class ServidorResource {
 
     private static final String ENTITY_NAME = "servidor";
 
-    private ServidorRepository servidorRepository;
+    private final ServidorRepository servidorRepository;
 
-    private ServidorSearchRepository servidorSearchRepository;
+    private final ServidorSearchRepository servidorSearchRepository;
 
     public ServidorResource(ServidorRepository servidorRepository, ServidorSearchRepository servidorSearchRepository) {
         this.servidorRepository = servidorRepository;

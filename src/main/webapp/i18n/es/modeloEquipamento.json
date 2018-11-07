@@ -1,7 +1,6 @@
-
 {
     "primeiraAplicacaoApp": {
-        "modeloEquipamento" : {
+        "modeloEquipamento": {
             "home": {
                 "title": "Modelo Equipamentos",
                 "createLabel": "Crear nuevo Modelo Equipamento",

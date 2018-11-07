@@ -264,7 +264,7 @@ public class ManutencaoResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(manutencao.getId().intValue())))
-            .andExpect(jsonPath("$.[*].estadoEquipamento").value(hasItem(DEFAULT_ESTADO_EQUIPAMENTO.toString())));
+            .andExpect(jsonPath("$.[*].estadoEquipamento").value(hasItem(DEFAULT_ESTADO_EQUIPAMENTO)));
     }
 
     @Test

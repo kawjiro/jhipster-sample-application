@@ -1,7 +1,6 @@
-
 {
     "primeiraAplicacaoApp": {
-        "uso" : {
+        "uso": {
             "home": {
                 "title": "Usos",
                 "createLabel": "Create a new Uso",

@@ -264,7 +264,7 @@ public class JustificativaResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(justificativa.getId().intValue())))
-            .andExpect(jsonPath("$.[*].descricaoAtividade").value(hasItem(DEFAULT_DESCRICAO_ATIVIDADE.toString())));
+            .andExpect(jsonPath("$.[*].descricaoAtividade").value(hasItem(DEFAULT_DESCRICAO_ATIVIDADE)));
     }
 
     @Test

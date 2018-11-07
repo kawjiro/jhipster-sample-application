@@ -1,7 +1,6 @@
-
 {
     "primeiraAplicacaoApp": {
-        "orgaoPublico" : {
+        "orgaoPublico": {
             "home": {
                 "title": "Orgao Publicos",
                 "createLabel": "Crear nuevo Orgao Publico",

@@ -273,7 +273,7 @@ public class ModeloEquipamentoResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(modeloEquipamento.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nomeModelo").value(hasItem(DEFAULT_NOME_MODELO.toString())))
+            .andExpect(jsonPath("$.[*].nomeModelo").value(hasItem(DEFAULT_NOME_MODELO)))
             .andExpect(jsonPath("$.[*].numPatrimonio").value(hasItem(DEFAULT_NUM_PATRIMONIO)));
     }
 
