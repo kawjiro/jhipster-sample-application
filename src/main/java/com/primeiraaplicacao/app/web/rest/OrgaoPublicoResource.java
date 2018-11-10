@@ -33,9 +33,9 @@ public class OrgaoPublicoResource {
 
     private static final String ENTITY_NAME = "orgaoPublico";
 
-    private OrgaoPublicoRepository orgaoPublicoRepository;
+    private final OrgaoPublicoRepository orgaoPublicoRepository;
 
-    private OrgaoPublicoSearchRepository orgaoPublicoSearchRepository;
+    private final OrgaoPublicoSearchRepository orgaoPublicoSearchRepository;
 
     public OrgaoPublicoResource(OrgaoPublicoRepository orgaoPublicoRepository, OrgaoPublicoSearchRepository orgaoPublicoSearchRepository) {
         this.orgaoPublicoRepository = orgaoPublicoRepository;

@@ -1,7 +1,6 @@
-
 {
     "primeiraAplicacaoApp": {
-        "reserva" : {
+        "reserva": {
             "home": {
                 "title": "Reservas",
                 "createLabel": "Crear nuevo Reserva",

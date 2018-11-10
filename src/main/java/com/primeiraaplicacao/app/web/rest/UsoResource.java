@@ -33,9 +33,9 @@ public class UsoResource {
 
     private static final String ENTITY_NAME = "uso";
 
-    private UsoRepository usoRepository;
+    private final UsoRepository usoRepository;
 
-    private UsoSearchRepository usoSearchRepository;
+    private final UsoSearchRepository usoSearchRepository;
 
     public UsoResource(UsoRepository usoRepository, UsoSearchRepository usoSearchRepository) {
         this.usoRepository = usoRepository;

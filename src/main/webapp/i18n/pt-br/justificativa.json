@@ -1,7 +1,6 @@
-
 {
     "primeiraAplicacaoApp": {
-        "justificativa" : {
+        "justificativa": {
             "home": {
                 "title": "Justificativas",
                 "createLabel": "Criar novo Justificativa",

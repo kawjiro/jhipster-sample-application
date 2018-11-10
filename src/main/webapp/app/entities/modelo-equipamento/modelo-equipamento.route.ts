@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { ModeloEquipamento } from 'app/shared/model/modelo-equipamento.model';
 import { ModeloEquipamentoService } from './modelo-equipamento.service';
 import { ModeloEquipamentoComponent } from './modelo-equipamento.component';
@@ -16,10 +16,13 @@ import { IModeloEquipamento } from 'app/shared/model/modelo-equipamento.model';
 export class ModeloEquipamentoResolve implements Resolve<IModeloEquipamento> {
     constructor(private service: ModeloEquipamentoService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ModeloEquipamento> {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).pipe(map((modeloEquipamento: HttpResponse<ModeloEquipamento>) => modeloEquipamento.body));
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<ModeloEquipamento>) => response.ok),
+                map((modeloEquipamento: HttpResponse<ModeloEquipamento>) => modeloEquipamento.body)
+            );
         }
         return of(new ModeloEquipamento());
     }

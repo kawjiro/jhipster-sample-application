@@ -1,7 +1,6 @@
-
 {
     "primeiraAplicacaoApp": {
-        "manutencao" : {
+        "manutencao": {
             "home": {
                 "title": "Manutencaos",
                 "createLabel": "Crear nuevo Manutencao",

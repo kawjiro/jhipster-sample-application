@@ -33,9 +33,9 @@ public class ReservaResource {
 
     private static final String ENTITY_NAME = "reserva";
 
-    private ReservaRepository reservaRepository;
+    private final ReservaRepository reservaRepository;
 
-    private ReservaSearchRepository reservaSearchRepository;
+    private final ReservaSearchRepository reservaSearchRepository;
 
     public ReservaResource(ReservaRepository reservaRepository, ReservaSearchRepository reservaSearchRepository) {
         this.reservaRepository = reservaRepository;
