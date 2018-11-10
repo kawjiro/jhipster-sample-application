@@ -57,7 +57,7 @@ export class UsoService {
             .pipe(map((res: EntityArrayResponseType) => this.convertDateArrayFromServer(res)));
     }
 
-    private convertDateFromClient(uso: IUso): IUso {
+    protected convertDateFromClient(uso: IUso): IUso {
         const copy: IUso = Object.assign({}, uso, {
             dataInicio: uso.dataInicio != null && uso.dataInicio.isValid() ? uso.dataInicio.format(DATE_FORMAT) : null,
             dataFim: uso.dataFim != null && uso.dataFim.isValid() ? uso.dataFim.format(DATE_FORMAT) : null
@@ -65,17 +65,21 @@ export class UsoService {
         return copy;
     }
 
-    private convertDateFromServer(res: EntityResponseType): EntityResponseType {
-        res.body.dataInicio = res.body.dataInicio != null ? moment(res.body.dataInicio) : null;
-        res.body.dataFim = res.body.dataFim != null ? moment(res.body.dataFim) : null;
+    protected convertDateFromServer(res: EntityResponseType): EntityResponseType {
+        if (res.body) {
+            res.body.dataInicio = res.body.dataInicio != null ? moment(res.body.dataInicio) : null;
+            res.body.dataFim = res.body.dataFim != null ? moment(res.body.dataFim) : null;
+        }
         return res;
     }
 
-    private convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
-        res.body.forEach((uso: IUso) => {
-            uso.dataInicio = uso.dataInicio != null ? moment(uso.dataInicio) : null;
-            uso.dataFim = uso.dataFim != null ? moment(uso.dataFim) : null;
-        });
+    protected convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
+        if (res.body) {
+            res.body.forEach((uso: IUso) => {
+                uso.dataInicio = uso.dataInicio != null ? moment(uso.dataInicio) : null;
+                uso.dataFim = uso.dataFim != null ? moment(uso.dataFim) : null;
+            });
+        }
         return res;
     }
 }

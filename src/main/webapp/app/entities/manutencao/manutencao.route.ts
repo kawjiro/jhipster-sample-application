@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { Manutencao } from 'app/shared/model/manutencao.model';
 import { ManutencaoService } from './manutencao.service';
 import { ManutencaoComponent } from './manutencao.component';
@@ -16,10 +16,13 @@ import { IManutencao } from 'app/shared/model/manutencao.model';
 export class ManutencaoResolve implements Resolve<IManutencao> {
     constructor(private service: ManutencaoService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Manutencao> {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).pipe(map((manutencao: HttpResponse<Manutencao>) => manutencao.body));
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<Manutencao>) => response.ok),
+                map((manutencao: HttpResponse<Manutencao>) => manutencao.body)
+            );
         }
         return of(new Manutencao());
     }

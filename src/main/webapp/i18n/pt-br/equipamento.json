@@ -1,7 +1,6 @@
-
 {
     "primeiraAplicacaoApp": {
-        "equipamento" : {
+        "equipamento": {
             "home": {
                 "title": "Equipamentos",
                 "createLabel": "Criar novo Equipamento",

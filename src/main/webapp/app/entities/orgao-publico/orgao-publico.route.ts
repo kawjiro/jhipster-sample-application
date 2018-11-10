@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { OrgaoPublico } from 'app/shared/model/orgao-publico.model';
 import { OrgaoPublicoService } from './orgao-publico.service';
 import { OrgaoPublicoComponent } from './orgao-publico.component';
@@ -16,10 +16,13 @@ import { IOrgaoPublico } from 'app/shared/model/orgao-publico.model';
 export class OrgaoPublicoResolve implements Resolve<IOrgaoPublico> {
     constructor(private service: OrgaoPublicoService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<OrgaoPublico> {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).pipe(map((orgaoPublico: HttpResponse<OrgaoPublico>) => orgaoPublico.body));
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<OrgaoPublico>) => response.ok),
+                map((orgaoPublico: HttpResponse<OrgaoPublico>) => orgaoPublico.body)
+            );
         }
         return of(new OrgaoPublico());
     }
